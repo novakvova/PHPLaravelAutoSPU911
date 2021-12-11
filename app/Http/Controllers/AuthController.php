@@ -110,6 +110,14 @@ class AuthController extends Controller
      *      )
      *   ),
      *  @OA\Parameter(
+     *      name="image",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="string"
+     *      )
+     *   ),
+     *  @OA\Parameter(
      *      name="email",
      *      in="query",
      *      required=true,
@@ -167,6 +175,7 @@ class AuthController extends Controller
     public function register(Request $request) {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|between:2,100',
+            'image' => 'required|string|between:2,255',
             'email' => 'required|string|email|max:100|unique:users',
             'password' => 'required|string|confirmed|min:6',
         ]);

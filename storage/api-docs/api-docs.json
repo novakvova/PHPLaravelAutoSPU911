@@ -69,6 +69,14 @@
                         }
                     },
                     {
+                        "name": "image",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
                         "name": "email",
                         "in": "query",
                         "required": true,
